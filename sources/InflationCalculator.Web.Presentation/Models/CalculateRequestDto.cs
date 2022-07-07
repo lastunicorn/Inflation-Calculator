@@ -14,14 +14,14 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace DustInTheWind.InflationCalculator.WebService.Bootstrapper.Models
+namespace DustInTheWind.InflationCalculator.Web.Presentation.Models
 {
     public class CalculateRequestDto
     {
         public string InputTime { get; set; }
-
+        
         public float InputValue { get; set; }
-
+        
         public string OutputTime { get; set; }
     }
 }

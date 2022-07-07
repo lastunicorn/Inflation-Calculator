@@ -26,14 +26,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     <ItemGroup>
         <PackageReference Include="Autofac" Version="6.4.0" />
-        <PackageReference Include="MediatR.Extensions.Autofac.DependencyInjection" Version="8.1.0" />
         <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\InflationCalculator.DataAccess\InflationCalculator.DataAccess.csproj" />
-      <ProjectReference Include="..\InflationCalculator.WebService.Application\InflationCalculator.WebService.Application.csproj" />
+      <ProjectReference Include="..\InflationCalculator.Web.Application\InflationCalculator.Web.Application.csproj" />
+      <ProjectReference Include="..\InflationCalculator.Web.Presentation\InflationCalculator.Web.Presentation.csproj" />
     </ItemGroup>
 
 </Project>

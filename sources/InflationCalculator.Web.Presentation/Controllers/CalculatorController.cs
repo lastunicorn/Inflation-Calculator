@@ -16,12 +16,12 @@
 
 using System;
 using System.Threading.Tasks;
+using DustInTheWind.InflationCalculator.Web.Presentation.Models;
 using DustInTheWind.InflationCalculator.WebService.Application.Calculate;
-using DustInTheWind.InflationCalculator.WebService.Bootstrapper.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DustInTheWind.InflationCalculator.WebService.Bootstrapper.Controllers
+namespace DustInTheWind.InflationCalculator.Web.Presentation.Controllers
 {
     [ApiController]
     [Route("[controller]")]
