@@ -23,6 +23,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DustInTheWind.InflationCalculator.Web.Presentation.Controllers
 {
+    /// <summary>
+    /// Perform calculations on amounts of money based on inflation.
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class CalculatorController : ControllerBase
@@ -34,6 +37,11 @@ namespace DustInTheWind.InflationCalculator.Web.Presentation.Controllers
             this.mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
+        /// <summary>
+        /// Calculates the equivalent amount of money in different times taken into account the inflation.
+        /// </summary>
+        /// <param name="requestDto">The request containing the input value and time and the output time, the one for which to calculate the equivalent amount.</param>
+        /// <returns>The equivalent amount of money for the specified value and time.</returns>
         [HttpPost]
         public async Task<float> Calculate(CalculateRequestDto requestDto)
         {
