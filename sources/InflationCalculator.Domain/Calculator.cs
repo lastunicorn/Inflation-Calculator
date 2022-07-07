@@ -42,13 +42,6 @@ namespace DustInTheWind.InflationCalculator.Domain
                     InputTime = null;
                     OutputTime = null;
                 }
-                //else
-                //{
-                //    InputTime = value.Count > 2
-                //        ? value[^2]?.Time
-                //        : value[^1]?.Time;
-                //    OutputTime = value[^1]?.Time;
-                //}
             }
         }
 
@@ -92,34 +85,40 @@ namespace DustInTheWind.InflationCalculator.Domain
                 return InputValue;
 
             if (inputIndex < outputIndex)
-            {
-                float value = InputValue;
-
-                for (int i = inputIndex + 1; i <= outputIndex; i++)
-                {
-                    float inflationPercentage = inflations[i].Value;
-                    float inflationValue = 1 + inflationPercentage / 100;
-                    value *= inflationValue;
-                }
-
-                return value;
-            }
+                return CalculateValueForAscending(inputIndex, outputIndex);
 
             if (inputIndex > outputIndex)
-            {
-                float value = InputValue;
-
-                for (int i = inputIndex; i > outputIndex; i--)
-                {
-                    float inflationPercentage = inflations[i].Value;
-                    float inflationValue = 1 + inflationPercentage / 100;
-                    value /= inflationValue;
-                }
-
-                return value;
-            }
+                return CalculateValueForDescending(inputIndex, outputIndex);
 
             return 0;
+        }
+
+        private float CalculateValueForAscending(int inputIndex, int outputIndex)
+        {
+            float value = InputValue;
+
+            for (int i = inputIndex + 1; i <= outputIndex; i++)
+            {
+                float inflationPercentage = inflations[i].Value;
+                float inflationValue = 1 + inflationPercentage / 100;
+                value *= inflationValue;
+            }
+
+            return value;
+        }
+
+        private float CalculateValueForDescending(int inputIndex, int outputIndex)
+        {
+            float value = InputValue;
+
+            for (int i = inputIndex; i > outputIndex; i--)
+            {
+                float inflationPercentage = inflations[i].Value;
+                float inflationValue = 1 + inflationPercentage / 100;
+                value /= inflationValue;
+            }
+
+            return value;
         }
     }
 }
