@@ -22,17 +22,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         <OutputType>Exe</OutputType>
         <TargetFramework>net5.0</TargetFramework>
         <RootNamespace>DustInTheWind.InflationCalculator.Cli.Bootstrapper</RootNamespace>
-        <AssemblyName>DustInTheWind.InflationCalculator.Cli.Bootstrapper</AssemblyName>
+        <AssemblyName>InflationCalculator</AssemblyName>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Autofac" Version="6.4.0" />
-      <PackageReference Include="MediatR.Extensions.Autofac.DependencyInjection" Version="8.1.0" />
+        <PackageReference Include="Autofac" Version="6.4.0" />
+        <PackageReference Include="MediatR.Extensions.Autofac.DependencyInjection" Version="8.1.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\InflationCalculator.Cli.Application\InflationCalculator.Cli.Application.csproj" />
-      <ProjectReference Include="..\InflationCalculator.DataAccess\InflationCalculator.DataAccess.csproj" />
+        <ProjectReference Include="..\InflationCalculator.Cli.Application\InflationCalculator.Cli.Application.csproj" />
+        <ProjectReference Include="..\InflationCalculator.Cli.Presentation\InflationCalculator.Cli.Presentation.csproj" />
+        <ProjectReference Include="..\InflationCalculator.DataAccess\InflationCalculator.DataAccess.csproj" />
     </ItemGroup>
 
 </Project>

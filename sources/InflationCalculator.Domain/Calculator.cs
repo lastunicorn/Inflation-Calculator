@@ -42,13 +42,13 @@ namespace DustInTheWind.InflationCalculator.Domain
                     InputTime = null;
                     OutputTime = null;
                 }
-                else
-                {
-                    InputTime = value.Count > 2
-                        ? value[^2]?.Time
-                        : value[^1]?.Time;
-                    OutputTime = value[^1]?.Time;
-                }
+                //else
+                //{
+                //    InputTime = value.Count > 2
+                //        ? value[^2]?.Time
+                //        : value[^1]?.Time;
+                //    OutputTime = value[^1]?.Time;
+                //}
             }
         }
 

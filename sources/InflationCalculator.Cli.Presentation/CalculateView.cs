@@ -14,20 +14,17 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System.Threading.Tasks;
-using Autofac;
-using DustInTheWind.InflationCalculator.Cli.Presentation;
+using System;
 
-namespace DustInTheWind.InflationCalculator.Cli.Bootstrapper
+namespace DustInTheWind.InflationCalculator.Cli.Presentation
 {
-    internal class Program
+    public class CalculateView
     {
-        private static async Task Main(string[] args)
-        {
-            IContainer container = Setup.ConfigureServices();
+        public float OutputValue { get; set; }
 
-            CalculateCommand command = container.Resolve<CalculateCommand>();
-            await command.Execute();
+        public void Display()
+        {
+            Console.WriteLine(OutputValue);
         }
     }
 }

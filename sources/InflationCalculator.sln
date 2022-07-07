@@ -3,26 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32428.217
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InflationCalculator.Wpf.Bootstrapper", "InflationCalculator.Wpf.Bootstrapper\InflationCalculator.Wpf.Bootstrapper.csproj", "{2876808B-9ECA-4551-9A0F-C4AAE5BC3054}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InflationCalculator.Wpf2.Bootstrapper", "InflationCalculator.Wpf2.Bootstrapper\InflationCalculator.Wpf2.Bootstrapper.csproj", "{2876808B-9ECA-4551-9A0F-C4AAE5BC3054}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InflationCalculator.Wpf.Presentation", "InflationCalculator.Wpf.Presentation\InflationCalculator.Wpf.Presentation.csproj", "{31F80FDE-FF4B-4830-94C7-FF87F7F370A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InflationCalculator.Wpf2.Presentation", "InflationCalculator.Wpf2.Presentation\InflationCalculator.Wpf2.Presentation.csproj", "{31F80FDE-FF4B-4830-94C7-FF87F7F370A8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{923F84D9-CFF3-4F1F-8AB5-0B7D562A6F1A}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InflationCalculator.Wpf.Application", "InflationCalculator.Wpf.Application\InflationCalculator.Wpf.Application.csproj", "{5D6CA89D-3607-463A-BAB5-4680D20BEAA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InflationCalculator.Wpf2.Application", "InflationCalculator.Wpf2.Application\InflationCalculator.Wpf2.Application.csproj", "{5D6CA89D-3607-463A-BAB5-4680D20BEAA4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InflationCalculator.Domain", "InflationCalculator.Domain\InflationCalculator.Domain.csproj", "{A7C4A132-8119-4544-8E0A-3A6C283959F9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InflationCalculator.DataAccess", "InflationCalculator.DataAccess\InflationCalculator.DataAccess.csproj", "{BA170DA3-E689-4C7B-B038-E7F9103A2DBA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App_Wpf2_StatefulBusiness", "App_Wpf2_StatefulBusiness", "{C41EBF47-5764-48A2-B67B-13981A0D2649}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App_Wpf2_StateInBusiness", "App_Wpf2_StateInBusiness", "{C41EBF47-5764-48A2-B67B-13981A0D2649}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App_Wpf1_StatelessBusiness", "App_Wpf1_StatelessBusiness", "{6F9C6761-D416-40F0-B6E6-62312A2282C2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App_Wpf1_StateInGui", "App_Wpf1_StateInGui", "{6F9C6761-D416-40F0-B6E6-62312A2282C2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App_Wpf3_StatefulBusiness_WithEventBus", "App_Wpf3_StatefulBusiness_WithEventBus", "{E986BD46-F451-4526-B9EE-054DA86E30E2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App_Wpf3_StateInBusiness_WithEventBus", "App_Wpf3_StateInBusiness_WithEventBus", "{E986BD46-F451-4526-B9EE-054DA86E30E2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App_Console", "App_Console", "{68BEDC11-FF7B-469E-98B9-8F6D55E61FF3}"
 EndProject

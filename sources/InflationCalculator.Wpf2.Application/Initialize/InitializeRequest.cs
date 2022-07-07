@@ -14,20 +14,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System.Threading.Tasks;
-using Autofac;
-using DustInTheWind.InflationCalculator.Cli.Presentation;
+using MediatR;
 
-namespace DustInTheWind.InflationCalculator.Cli.Bootstrapper
+namespace DustInTheWind.InflationCalculator.Wpf2.Application.Initialize
 {
-    internal class Program
+    public class InitializeRequest : IRequest<InitializeResponse>
     {
-        private static async Task Main(string[] args)
-        {
-            IContainer container = Setup.ConfigureServices();
-
-            CalculateCommand command = container.Resolve<CalculateCommand>();
-            await command.Execute();
-        }
     }
 }

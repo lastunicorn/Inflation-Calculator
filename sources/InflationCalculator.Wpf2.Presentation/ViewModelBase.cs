@@ -1,4 +1,4 @@
-﻿// Inflation Calculator
+// Inflation Calculator
 // Copyright (C) 2022 Dust in the Wind
 // 
 // This program is free software: you can redistribute it and/or modify
@@ -14,20 +14,18 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System.Threading.Tasks;
-using Autofac;
-using DustInTheWind.InflationCalculator.Cli.Presentation;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
-namespace DustInTheWind.InflationCalculator.Cli.Bootstrapper
+namespace DustInTheWind.InflationCalculator.Wpf2.Presentation
 {
-    internal class Program
+    public class ViewModelBase : INotifyPropertyChanged
     {
-        private static async Task Main(string[] args)
+        public event PropertyChangedEventHandler PropertyChanged;
+        
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            IContainer container = Setup.ConfigureServices();
-
-            CalculateCommand command = container.Resolve<CalculateCommand>();
-            await command.Execute();
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

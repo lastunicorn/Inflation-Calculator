@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 Inflation Calculator
 Copyright (C) 2022 Dust in the Wind
 
@@ -20,8 +20,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
-        <RootNamespace>DustInTheWind.InflationCalculator.Cli.Presentation</RootNamespace>
-        <AssemblyName>DustInTheWind.InflationCalculator.Cli.Presentation</AssemblyName>
+        <RootNamespace>DustInTheWind.InflationCalculator.Wpf2.Application</RootNamespace>
+        <AssemblyName>DustInTheWind.InflationCalculator.Wpf2.Application</AssemblyName>
     </PropertyGroup>
 
     <ItemGroup>
@@ -29,7 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\InflationCalculator.Cli.Application\InflationCalculator.Cli.Application.csproj" />
+        <ProjectReference Include="..\InflationCalculator.Domain\InflationCalculator.Domain.csproj" />
     </ItemGroup>
 
 </Project>

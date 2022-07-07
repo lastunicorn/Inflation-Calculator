@@ -14,20 +14,33 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System.Threading.Tasks;
+using System.Globalization;
+using System.Windows;
 using Autofac;
-using DustInTheWind.InflationCalculator.Cli.Presentation;
+using DustInTheWind.InflationCalculator.Wpf2.Presentation;
 
-namespace DustInTheWind.InflationCalculator.Cli.Bootstrapper
+namespace DustInTheWind.InflationCalculator.Wpf2.Bootstrapper
 {
-    internal class Program
+    /// <summary>
+    /// Interaction logic for App.xaml
+    /// </summary>
+    public partial class App : System.Windows.Application
     {
-        private static async Task Main(string[] args)
+        protected override void OnStartup(StartupEventArgs e)
         {
+            CultureInfo.CurrentCulture = new CultureInfo("ro-RO");
+            CultureInfo.CurrentUICulture = new CultureInfo("ro-RO");
+
             IContainer container = Setup.ConfigureServices();
 
-            CalculateCommand command = container.Resolve<CalculateCommand>();
-            await command.Execute();
+            MainWindow window = container.Resolve<MainWindow>();
+            window.DataContext = container.Resolve<MainViewModel>();
+
+            MainWindow = window;
+
+            window.Show();
+
+            base.OnStartup(e);
         }
     }
 }
