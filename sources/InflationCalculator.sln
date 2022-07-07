@@ -40,6 +40,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InflationCalculator.Web.App
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InflationCalculator.Web.Presentation", "InflationCalculator.Web.Presentation\InflationCalculator.Web.Presentation.csproj", "{A25B84A4-78D8-431E-AB34-A239D1898CB6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InflationCalculator.Wpf3.Bootstrapper", "InflationCalculator.Wpf3.Bootstrapper\InflationCalculator.Wpf3.Bootstrapper.csproj", "{F9783150-AD87-4ECB-AA5A-D652D88DC3C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InflationCalculator.Wpf3.Presentation", "InflationCalculator.Wpf3.Presentation\InflationCalculator.Wpf3.Presentation.csproj", "{6981A326-37E8-4C25-8361-01ACCF51FB72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InflationCalculator.Wpf3.Application", "InflationCalculator.Wpf3.Application\InflationCalculator.Wpf3.Application.csproj", "{9CCD6588-79AD-4F8F-A70B-A5B51781241D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InflationCalculator.Wpf3.Infrastructure", "InflationCalculator.Wpf3.Infrastructure\InflationCalculator.Wpf3.Infrastructure.csproj", "{A1D26D00-7540-4903-BDD8-A38B4038A60A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -90,6 +98,22 @@ Global
 		{A25B84A4-78D8-431E-AB34-A239D1898CB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A25B84A4-78D8-431E-AB34-A239D1898CB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A25B84A4-78D8-431E-AB34-A239D1898CB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9783150-AD87-4ECB-AA5A-D652D88DC3C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9783150-AD87-4ECB-AA5A-D652D88DC3C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9783150-AD87-4ECB-AA5A-D652D88DC3C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9783150-AD87-4ECB-AA5A-D652D88DC3C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6981A326-37E8-4C25-8361-01ACCF51FB72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6981A326-37E8-4C25-8361-01ACCF51FB72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6981A326-37E8-4C25-8361-01ACCF51FB72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6981A326-37E8-4C25-8361-01ACCF51FB72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CCD6588-79AD-4F8F-A70B-A5B51781241D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CCD6588-79AD-4F8F-A70B-A5B51781241D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CCD6588-79AD-4F8F-A70B-A5B51781241D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CCD6588-79AD-4F8F-A70B-A5B51781241D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1D26D00-7540-4903-BDD8-A38B4038A60A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1D26D00-7540-4903-BDD8-A38B4038A60A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1D26D00-7540-4903-BDD8-A38B4038A60A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1D26D00-7540-4903-BDD8-A38B4038A60A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -104,6 +128,10 @@ Global
 		{52D68B39-ADBB-4730-89A4-F7A883129CE8} = {4B8CD724-9F49-46EA-B2E2-D962894614FE}
 		{F60B676B-0124-4E85-BCEB-5E31B5F0B0BE} = {4B8CD724-9F49-46EA-B2E2-D962894614FE}
 		{A25B84A4-78D8-431E-AB34-A239D1898CB6} = {4B8CD724-9F49-46EA-B2E2-D962894614FE}
+		{F9783150-AD87-4ECB-AA5A-D652D88DC3C7} = {E986BD46-F451-4526-B9EE-054DA86E30E2}
+		{6981A326-37E8-4C25-8361-01ACCF51FB72} = {E986BD46-F451-4526-B9EE-054DA86E30E2}
+		{9CCD6588-79AD-4F8F-A70B-A5B51781241D} = {E986BD46-F451-4526-B9EE-054DA86E30E2}
+		{A1D26D00-7540-4903-BDD8-A38B4038A60A} = {E986BD46-F451-4526-B9EE-054DA86E30E2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A2E8FF31-E4E2-46A7-9C53-8E3E42EB1768}

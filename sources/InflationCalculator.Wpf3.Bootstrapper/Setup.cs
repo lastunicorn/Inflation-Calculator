@@ -20,11 +20,13 @@ using DustInTheWind.InflationCalculator.DataAccess;
 using DustInTheWind.InflationCalculator.DataAccess.Data;
 using DustInTheWind.InflationCalculator.Domain;
 using DustInTheWind.InflationCalculator.Domain.DataAccess;
-using DustInTheWind.InflationCalculator.Wpf2.Application.Initialize;
-using DustInTheWind.InflationCalculator.Wpf2.Presentation;
+using DustInTheWind.InflationCalculator.Wpf3.Application;
+using DustInTheWind.InflationCalculator.Wpf3.Application.Initialize;
+using DustInTheWind.InflationCalculator.Wpf3.Infrastructure;
+using DustInTheWind.InflationCalculator.Wpf3.Presentation;
 using MediatR.Extensions.Autofac.DependencyInjection;
 
-namespace DustInTheWind.InflationCalculator.Wpf2.Bootstrapper
+namespace DustInTheWind.InflationCalculator.Wpf3.Bootstrapper
 {
     public class Setup
     {
@@ -32,7 +34,7 @@ namespace DustInTheWind.InflationCalculator.Wpf2.Bootstrapper
         {
             ContainerBuilder containerBuilder = new();
 
-            containerBuilder.RegisterType<YearlyDataContext>().As<DataContext>().SingleInstance();
+            containerBuilder.RegisterType<QuarterlyDataContext>().As<DataContext>().SingleInstance();
             containerBuilder.RegisterType<InflationRepository>().As<IInflationRepository>();
 
             containerBuilder.RegisterType<Calculator>().AsSelf().SingleInstance();
@@ -41,7 +43,10 @@ namespace DustInTheWind.InflationCalculator.Wpf2.Bootstrapper
             containerBuilder.RegisterType<MainWindow>().AsSelf();
 
             Assembly applicationAssembly = typeof(InitializeRequest).Assembly;
-            containerBuilder.RegisterMediatR(applicationAssembly);
+            Assembly presentationAssembly = typeof(MainWindow).Assembly;
+            containerBuilder.RegisterMediatR(applicationAssembly, presentationAssembly);
+
+            containerBuilder.RegisterType<EventBus>().AsSelf().SingleInstance();
 
             return containerBuilder.Build();
         }

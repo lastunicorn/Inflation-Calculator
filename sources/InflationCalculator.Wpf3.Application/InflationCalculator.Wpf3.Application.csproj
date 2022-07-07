@@ -20,22 +20,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
-        <RootNamespace>DustInTheWind.InflationCalculator.DataAccess</RootNamespace>
-        <AssemblyName>DustInTheWind.InflationCalculator.DataAccess</AssemblyName>
+        <RootNamespace>DustInTheWind.InflationCalculator.Wpf3.Application</RootNamespace>
+        <AssemblyName>DustInTheWind.InflationCalculator.Wpf3.Application</AssemblyName>
     </PropertyGroup>
 
     <ItemGroup>
-        <None Remove="inflation-quartarly.csv" />
-        <None Remove="inflation-yearly.csv" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <EmbeddedResource Include="Data\inflation-quartarly.csv" />
-        <EmbeddedResource Include="Data\inflation-yearly.csv" />
+        <PackageReference Include="MediatR" Version="10.0.1" />
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\InflationCalculator.Domain\InflationCalculator.Domain.csproj" />
+        <ProjectReference Include="..\InflationCalculator.Wpf3.Infrastructure\InflationCalculator.Wpf3.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

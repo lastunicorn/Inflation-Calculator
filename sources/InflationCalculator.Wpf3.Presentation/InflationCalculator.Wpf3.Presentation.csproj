@@ -19,23 +19,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
-        <RootNamespace>DustInTheWind.InflationCalculator.DataAccess</RootNamespace>
-        <AssemblyName>DustInTheWind.InflationCalculator.DataAccess</AssemblyName>
+        <TargetFramework>net5.0-windows</TargetFramework>
+        <UseWPF>true</UseWPF>
+        <RootNamespace>DustInTheWind.InflationCalculator.Wpf3.Presentation</RootNamespace>
+        <AssemblyName>DustInTheWind.InflationCalculator.Wpf3.Presentation</AssemblyName>
     </PropertyGroup>
 
     <ItemGroup>
-        <None Remove="inflation-quartarly.csv" />
-        <None Remove="inflation-yearly.csv" />
+        <PackageReference Include="MediatR" Version="10.0.1" />
+        <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
     </ItemGroup>
 
     <ItemGroup>
-        <EmbeddedResource Include="Data\inflation-quartarly.csv" />
-        <EmbeddedResource Include="Data\inflation-yearly.csv" />
+        <ProjectReference Include="..\InflationCalculator.Wpf3.Application\InflationCalculator.Wpf3.Application.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\InflationCalculator.Domain\InflationCalculator.Domain.csproj" />
+        <Page Update="MainWindow.xaml">
+            <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+            <SubType>Designer</SubType>
+        </Page>
     </ItemGroup>
 
 </Project>

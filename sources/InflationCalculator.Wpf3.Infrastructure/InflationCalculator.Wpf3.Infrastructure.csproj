@@ -1,4 +1,4 @@
-﻿<!--
+<!--
 Inflation Calculator
 Copyright (C) 2022 Dust in the Wind
 
@@ -20,22 +20,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
-        <RootNamespace>DustInTheWind.InflationCalculator.DataAccess</RootNamespace>
-        <AssemblyName>DustInTheWind.InflationCalculator.DataAccess</AssemblyName>
+        <RootNamespace>DustInTheWind.InflationCalculator.Wpf3.Infrastructure</RootNamespace>
+        <AssemblyName>DustInTheWind.InflationCalculator.Wpf3.Infrastructure</AssemblyName>
     </PropertyGroup>
-
-    <ItemGroup>
-        <None Remove="inflation-quartarly.csv" />
-        <None Remove="inflation-yearly.csv" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <EmbeddedResource Include="Data\inflation-quartarly.csv" />
-        <EmbeddedResource Include="Data\inflation-yearly.csv" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <ProjectReference Include="..\InflationCalculator.Domain\InflationCalculator.Domain.csproj" />
-    </ItemGroup>
 
 </Project>

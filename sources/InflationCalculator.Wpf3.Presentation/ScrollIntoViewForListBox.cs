@@ -18,7 +18,7 @@ using System;
 using System.Windows.Controls;
 using Microsoft.Xaml.Behaviors;
 
-namespace DustInTheWind.InflationCalculator.Wpf2.Presentation
+namespace DustInTheWind.InflationCalculator.Wpf3.Presentation
 {
     public class ScrollIntoViewForListBox : Behavior<ListBox>
     {
