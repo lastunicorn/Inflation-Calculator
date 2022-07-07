@@ -1,0 +1,104 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32428.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InflationCalculator.Wpf.Bootstrapper", "InflationCalculator.Wpf.Bootstrapper\InflationCalculator.Wpf.Bootstrapper.csproj", "{2876808B-9ECA-4551-9A0F-C4AAE5BC3054}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InflationCalculator.Wpf.Presentation", "InflationCalculator.Wpf.Presentation\InflationCalculator.Wpf.Presentation.csproj", "{31F80FDE-FF4B-4830-94C7-FF87F7F370A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{923F84D9-CFF3-4F1F-8AB5-0B7D562A6F1A}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InflationCalculator.Wpf.Application", "InflationCalculator.Wpf.Application\InflationCalculator.Wpf.Application.csproj", "{5D6CA89D-3607-463A-BAB5-4680D20BEAA4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InflationCalculator.Domain", "InflationCalculator.Domain\InflationCalculator.Domain.csproj", "{A7C4A132-8119-4544-8E0A-3A6C283959F9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InflationCalculator.DataAccess", "InflationCalculator.DataAccess\InflationCalculator.DataAccess.csproj", "{BA170DA3-E689-4C7B-B038-E7F9103A2DBA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App_Wpf_StatefulBusiness_NoEventBus", "App_Wpf_StatefulBusiness_NoEventBus", "{C41EBF47-5764-48A2-B67B-13981A0D2649}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App_Wpf_StatelessBusiness", "App_Wpf_StatelessBusiness", "{6F9C6761-D416-40F0-B6E6-62312A2282C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App_Wpf_StatefulBusiness_WithEventBus", "App_Wpf_StatefulBusiness_WithEventBus", "{E986BD46-F451-4526-B9EE-054DA86E30E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App_Console", "App_Console", "{68BEDC11-FF7B-469E-98B9-8F6D55E61FF3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App_WebService", "App_WebService", "{4B8CD724-9F49-46EA-B2E2-D962894614FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InflationCalculator.Cli.Bootstrapper", "InflationCalculator.Cli.Bootstrapper\InflationCalculator.Cli.Bootstrapper.csproj", "{65638D43-F45E-4213-9C6A-A5CC2EE72363}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InflationCalculator.Cli.Application", "InflationCalculator.Cli.Application\InflationCalculator.Cli.Application.csproj", "{85A977E0-13C5-4FC4-966A-E262169A5BEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InflationCalculator.Cli.Presentation", "InflationCalculator.Cli.Presentation\InflationCalculator.Cli.Presentation.csproj", "{426B2A2B-1E8B-4758-A1F4-248C2BD47276}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InflationCalculator.WebService.Bootstrapper", "InflationCalculator.WebService.Bootstrapper\InflationCalculator.WebService.Bootstrapper.csproj", "{52D68B39-ADBB-4730-89A4-F7A883129CE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InflationCalculator.WebService.Application", "InflationCalculator.WebService.Application\InflationCalculator.WebService.Application.csproj", "{F60B676B-0124-4E85-BCEB-5E31B5F0B0BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2876808B-9ECA-4551-9A0F-C4AAE5BC3054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2876808B-9ECA-4551-9A0F-C4AAE5BC3054}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2876808B-9ECA-4551-9A0F-C4AAE5BC3054}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2876808B-9ECA-4551-9A0F-C4AAE5BC3054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31F80FDE-FF4B-4830-94C7-FF87F7F370A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31F80FDE-FF4B-4830-94C7-FF87F7F370A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31F80FDE-FF4B-4830-94C7-FF87F7F370A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31F80FDE-FF4B-4830-94C7-FF87F7F370A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D6CA89D-3607-463A-BAB5-4680D20BEAA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D6CA89D-3607-463A-BAB5-4680D20BEAA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D6CA89D-3607-463A-BAB5-4680D20BEAA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D6CA89D-3607-463A-BAB5-4680D20BEAA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7C4A132-8119-4544-8E0A-3A6C283959F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7C4A132-8119-4544-8E0A-3A6C283959F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7C4A132-8119-4544-8E0A-3A6C283959F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7C4A132-8119-4544-8E0A-3A6C283959F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA170DA3-E689-4C7B-B038-E7F9103A2DBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA170DA3-E689-4C7B-B038-E7F9103A2DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA170DA3-E689-4C7B-B038-E7F9103A2DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA170DA3-E689-4C7B-B038-E7F9103A2DBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65638D43-F45E-4213-9C6A-A5CC2EE72363}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65638D43-F45E-4213-9C6A-A5CC2EE72363}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65638D43-F45E-4213-9C6A-A5CC2EE72363}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65638D43-F45E-4213-9C6A-A5CC2EE72363}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85A977E0-13C5-4FC4-966A-E262169A5BEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85A977E0-13C5-4FC4-966A-E262169A5BEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85A977E0-13C5-4FC4-966A-E262169A5BEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85A977E0-13C5-4FC4-966A-E262169A5BEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{426B2A2B-1E8B-4758-A1F4-248C2BD47276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{426B2A2B-1E8B-4758-A1F4-248C2BD47276}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{426B2A2B-1E8B-4758-A1F4-248C2BD47276}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{426B2A2B-1E8B-4758-A1F4-248C2BD47276}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52D68B39-ADBB-4730-89A4-F7A883129CE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52D68B39-ADBB-4730-89A4-F7A883129CE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52D68B39-ADBB-4730-89A4-F7A883129CE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52D68B39-ADBB-4730-89A4-F7A883129CE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F60B676B-0124-4E85-BCEB-5E31B5F0B0BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F60B676B-0124-4E85-BCEB-5E31B5F0B0BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F60B676B-0124-4E85-BCEB-5E31B5F0B0BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F60B676B-0124-4E85-BCEB-5E31B5F0B0BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2876808B-9ECA-4551-9A0F-C4AAE5BC3054} = {C41EBF47-5764-48A2-B67B-13981A0D2649}
+		{31F80FDE-FF4B-4830-94C7-FF87F7F370A8} = {C41EBF47-5764-48A2-B67B-13981A0D2649}
+		{5D6CA89D-3607-463A-BAB5-4680D20BEAA4} = {C41EBF47-5764-48A2-B67B-13981A0D2649}
+		{65638D43-F45E-4213-9C6A-A5CC2EE72363} = {68BEDC11-FF7B-469E-98B9-8F6D55E61FF3}
+		{85A977E0-13C5-4FC4-966A-E262169A5BEA} = {68BEDC11-FF7B-469E-98B9-8F6D55E61FF3}
+		{426B2A2B-1E8B-4758-A1F4-248C2BD47276} = {68BEDC11-FF7B-469E-98B9-8F6D55E61FF3}
+		{52D68B39-ADBB-4730-89A4-F7A883129CE8} = {4B8CD724-9F49-46EA-B2E2-D962894614FE}
+		{F60B676B-0124-4E85-BCEB-5E31B5F0B0BE} = {4B8CD724-9F49-46EA-B2E2-D962894614FE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2E8FF31-E4E2-46A7-9C53-8E3E42EB1768}
+	EndGlobalSection
+EndGlobal

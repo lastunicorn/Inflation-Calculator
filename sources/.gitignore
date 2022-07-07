@@ -1,0 +1,14 @@
+.vs/
+bin/
+obj/
+
+*.user
+*.suo
+*.TMP
+
+packages/
+*.nupkg
+ExternalLibraries/
+
+CoverageReport/
+TestResults/
