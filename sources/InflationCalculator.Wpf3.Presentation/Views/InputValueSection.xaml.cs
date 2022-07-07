@@ -14,11 +14,18 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using MediatR;
+using System.Windows.Controls;
 
-namespace DustInTheWind.InflationCalculator.Wpf3.Application.Calculate
+namespace DustInTheWind.InflationCalculator.Wpf3.Presentation.Views
 {
-    public class CalculateRequest : IRequest<CalculateResponse>
+    /// <summary>
+    /// Interaction logic for InputValueSection.xaml
+    /// </summary>
+    public partial class InputValueSection : UserControl
     {
+        public InputValueSection()
+        {
+            InitializeComponent();
+        }
     }
 }

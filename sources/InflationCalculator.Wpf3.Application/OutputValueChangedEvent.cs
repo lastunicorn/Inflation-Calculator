@@ -16,7 +16,8 @@
 
 namespace DustInTheWind.InflationCalculator.Wpf3.Application
 {
-    public class InputTimeChangedEvent
+    public class OutputValueChangedEvent
     {
+        public float NewValue { get; set; }
     }
 }

@@ -18,7 +18,7 @@ using MediatR;
 
 namespace DustInTheWind.InflationCalculator.Wpf3.Application.Initialize
 {
-    public class InitializeRequest : IRequest<InitializeResponse>
+    public class InitializeRequest : IRequest
     {
     }
 }

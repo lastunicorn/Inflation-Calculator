@@ -20,10 +20,10 @@ using DustInTheWind.InflationCalculator.DataAccess;
 using DustInTheWind.InflationCalculator.DataAccess.Data;
 using DustInTheWind.InflationCalculator.Domain;
 using DustInTheWind.InflationCalculator.Domain.DataAccess;
-using DustInTheWind.InflationCalculator.Wpf3.Application;
 using DustInTheWind.InflationCalculator.Wpf3.Application.Initialize;
 using DustInTheWind.InflationCalculator.Wpf3.Infrastructure;
-using DustInTheWind.InflationCalculator.Wpf3.Presentation;
+using DustInTheWind.InflationCalculator.Wpf3.Presentation.ViewModels;
+using DustInTheWind.InflationCalculator.Wpf3.Presentation.Views;
 using MediatR.Extensions.Autofac.DependencyInjection;
 
 namespace DustInTheWind.InflationCalculator.Wpf3.Bootstrapper

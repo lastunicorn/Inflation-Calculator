@@ -17,7 +17,8 @@
 using System.Globalization;
 using System.Windows;
 using Autofac;
-using DustInTheWind.InflationCalculator.Wpf3.Presentation;
+using DustInTheWind.InflationCalculator.Wpf3.Presentation.ViewModels;
+using DustInTheWind.InflationCalculator.Wpf3.Presentation.Views;
 
 namespace DustInTheWind.InflationCalculator.Wpf3.Bootstrapper
 {

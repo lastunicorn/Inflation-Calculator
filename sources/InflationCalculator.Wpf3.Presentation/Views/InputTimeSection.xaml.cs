@@ -14,16 +14,16 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System.Windows;
+using System.Windows.Controls;
 
-namespace DustInTheWind.InflationCalculator.Wpf3.Presentation
+namespace DustInTheWind.InflationCalculator.Wpf3.Presentation.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for InputTimeSection.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class InputTimeSection : UserControl
     {
-        public MainWindow()
+        public InputTimeSection()
         {
             InitializeComponent();
         }

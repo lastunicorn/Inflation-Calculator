@@ -37,11 +37,20 @@ namespace DustInTheWind.InflationCalculator.Wpf3.Application.SetInputValue
         protected override async Task<Unit> Handle(SetInputValueRequest request, CancellationToken cancellationToken)
         {
             calculator.InputValue = request.InputValue;
-
-            InputTimeChangedEvent inputTimeChangedEvent = new();
-            await eventBus.Publish(inputTimeChangedEvent, cancellationToken);
+            
+            float newOutputValue = calculator.Calculate();
+            await RaiseOutputValueChangedEvent(newOutputValue, cancellationToken);
 
             return Unit.Value;
+        }
+
+        private async Task RaiseOutputValueChangedEvent(float newOutputValue, CancellationToken cancellationToken)
+        {
+            OutputValueChangedEvent outputValueChangedEvent = new()
+            {
+                NewValue = newOutputValue
+            };
+            await eventBus.Publish(outputValueChangedEvent, cancellationToken);
         }
     }
 }

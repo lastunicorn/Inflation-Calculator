@@ -14,10 +14,22 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace DustInTheWind.InflationCalculator.Wpf3.Application.Calculate
+using System.Collections.Generic;
+
+namespace DustInTheWind.InflationCalculator.Wpf3.Application
 {
-    public class CalculateResponse
+    public class ApplicationInitializedEvent
     {
+        public List<string> AvailableInputTimes { get; set; }
+
+        public List<string> AvailableOutputTimes { get; set; }
+
+        public float InputValue { get; set; }
+
         public float OutputValue { get; set; }
+
+        public string InputTime { get; set; }
+
+        public string OutputTime { get; set; }
     }
 }

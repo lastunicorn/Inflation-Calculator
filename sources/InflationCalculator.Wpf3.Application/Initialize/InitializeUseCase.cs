@@ -21,24 +21,25 @@ using System.Threading;
 using System.Threading.Tasks;
 using DustInTheWind.InflationCalculator.Domain;
 using DustInTheWind.InflationCalculator.Domain.DataAccess;
+using DustInTheWind.InflationCalculator.Wpf3.Infrastructure;
 using MediatR;
 
 namespace DustInTheWind.InflationCalculator.Wpf3.Application.Initialize
 {
-    internal class InitializeUseCase : IRequestHandler<InitializeRequest, InitializeResponse>
+    internal class InitializeUseCase : AsyncRequestHandler<InitializeRequest>
     {
         private readonly IInflationRepository inflationRepository;
         private readonly Calculator calculator;
-        private readonly IMediator mediator;
+        private readonly EventBus eventBus;
 
-        public InitializeUseCase(IInflationRepository inflationRepository, Calculator calculator, IMediator mediator)
+        public InitializeUseCase(IInflationRepository inflationRepository, Calculator calculator, EventBus eventBus)
         {
             this.inflationRepository = inflationRepository ?? throw new ArgumentNullException(nameof(inflationRepository));
             this.calculator = calculator ?? throw new ArgumentNullException(nameof(calculator));
-            this.mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
+            this.eventBus = eventBus ?? throw new ArgumentNullException(nameof(eventBus));
         }
 
-        public async Task<InitializeResponse> Handle(InitializeRequest request, CancellationToken cancellationToken)
+        protected override async Task<Unit> Handle(InitializeRequest request, CancellationToken cancellationToken)
         {
             List<Inflation> inflations = inflationRepository.GetAll().ToList();
 
@@ -48,9 +49,16 @@ namespace DustInTheWind.InflationCalculator.Wpf3.Application.Initialize
                 : inflations[^1]?.Time;
             calculator.OutputTime = inflations[^1]?.Time;
 
+            await RaiseApplicationInitializedEvent(cancellationToken);
+
+            return Unit.Value;
+        }
+
+        private async Task RaiseApplicationInitializedEvent(CancellationToken cancellationToken)
+        {
             List<string> availableTimes = calculator.AvailableTimes.ToList();
 
-            InitializeResponse response = new()
+            ApplicationInitializedEvent applicationInitializedEvent = new()
             {
                 AvailableInputTimes = availableTimes,
                 InputTime = calculator.InputTime,
@@ -59,8 +67,7 @@ namespace DustInTheWind.InflationCalculator.Wpf3.Application.Initialize
                 OutputTime = calculator.OutputTime,
                 OutputValue = calculator.Calculate()
             };
-
-            return response;
+            await eventBus.Publish(applicationInitializedEvent, cancellationToken);
         }
     }
 }

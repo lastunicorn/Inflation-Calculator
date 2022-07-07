@@ -14,9 +14,18 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace DustInTheWind.InflationCalculator.Wpf3.Application
+using System.Windows;
+
+namespace DustInTheWind.InflationCalculator.Wpf3.Presentation.Views
 {
-    public class OutputTimeChangedEvent
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
     {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
     }
 }

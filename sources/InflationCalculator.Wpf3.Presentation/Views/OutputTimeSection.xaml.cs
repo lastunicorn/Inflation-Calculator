@@ -14,22 +14,18 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System.Collections.Generic;
+using System.Windows.Controls;
 
-namespace DustInTheWind.InflationCalculator.Wpf3.Application.Initialize
+namespace DustInTheWind.InflationCalculator.Wpf3.Presentation.Views
 {
-    public class InitializeResponse
+    /// <summary>
+    /// Interaction logic for OutputTimeSection.xaml
+    /// </summary>
+    public partial class OutputTimeSection : UserControl
     {
-        public List<string> AvailableInputTimes { get; set; }
-        
-        public List<string> AvailableOutputTimes { get; set; }
-        
-        public float InputValue { get; set; }
-        
-        public float OutputValue { get; set; }
-        
-        public string InputTime { get; set; }
-        
-        public string OutputTime { get; set; }
+        public OutputTimeSection()
+        {
+            InitializeComponent();
+        }
     }
 }

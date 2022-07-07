@@ -14,18 +14,50 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 namespace DustInTheWind.InflationCalculator.Wpf3.Presentation
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
+        protected bool IsInitializationMode { get; private set; }
+
         public event PropertyChangedEventHandler PropertyChanged;
-        
+
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        protected void RunInitializeMode(Action action)
+        {
+            IsInitializationMode = true;
+
+            try
+            {
+                action();
+            }
+            finally
+            {
+                IsInitializationMode = false;
+            }
+        }
+
+        protected async Task RunInitializeMode(Func<Task> action)
+        {
+            IsInitializationMode = true;
+
+            try
+            {
+                await action();
+            }
+            finally
+            {
+                IsInitializationMode = false;
+            }
         }
     }
 }
