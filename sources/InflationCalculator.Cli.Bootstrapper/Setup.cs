@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Autofac;
+using DustInTheWind.ConsoleTools.Commando.Autofac.DependencyInjection;
 using DustInTheWind.InflationCalculator.Cli.Application.Calculate;
 using DustInTheWind.InflationCalculator.Cli.Presentation;
 using DustInTheWind.InflationCalculator.DataAccess;
@@ -36,7 +37,7 @@ namespace DustInTheWind.InflationCalculator.Cli.Bootstrapper
 
             containerBuilder.RegisterType<YearlyDataContext>().As<DataContext>().SingleInstance();
             containerBuilder.RegisterType<InflationRepository>().As<IInflationRepository>();
-            
+
             containerBuilder.Register(container =>
             {
                 IInflationRepository inflationRepository = container.Resolve<IInflationRepository>();
@@ -52,8 +53,8 @@ namespace DustInTheWind.InflationCalculator.Cli.Bootstrapper
             Assembly applicationAssembly = typeof(CalculateRequest).Assembly;
             containerBuilder.RegisterMediatR(applicationAssembly);
 
-            containerBuilder.RegisterType<CalculateCommand>().AsSelf();
-            containerBuilder.RegisterType<CalculateView>().AsSelf();
+            Assembly presentationAssembly = typeof(CalculateCommand).Assembly;
+            containerBuilder.RegisterCommando(presentationAssembly);
 
             return containerBuilder.Build();
         }

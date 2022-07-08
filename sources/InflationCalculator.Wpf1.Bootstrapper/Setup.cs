@@ -34,7 +34,7 @@ namespace DustInTheWind.InflationCalculator.Wpf1.Bootstrapper
         {
             ContainerBuilder containerBuilder = new();
 
-            containerBuilder.RegisterType<YearlyDataContext>().As<DataContext>().SingleInstance();
+            containerBuilder.RegisterType<QuarterlyDataContext>().As<DataContext>().SingleInstance();
             containerBuilder.RegisterType<InflationRepository>().As<IInflationRepository>();
 
             containerBuilder.Register(container =>

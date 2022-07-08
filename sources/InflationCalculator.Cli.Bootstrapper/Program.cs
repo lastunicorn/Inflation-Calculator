@@ -14,9 +14,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+using System;
 using System.Threading.Tasks;
 using Autofac;
-using DustInTheWind.InflationCalculator.Cli.Presentation;
+using DustInTheWind.ConsoleTools;
+using DustInTheWind.ConsoleTools.Commando;
 
 namespace DustInTheWind.InflationCalculator.Cli.Bootstrapper
 {
@@ -26,8 +28,29 @@ namespace DustInTheWind.InflationCalculator.Cli.Bootstrapper
         {
             IContainer container = Setup.ConfigureServices();
 
-            CalculateCommand command = container.Resolve<CalculateCommand>();
-            await command.Execute();
+            await using ILifetimeScope lifetimeScope = container.BeginLifetimeScope();
+            await ProcessRequest(args, lifetimeScope);
+        }
+
+        private static async Task ProcessRequest(string[] args, IComponentContext container)
+        {
+            CommandRouter commandRouter = container.Resolve<CommandRouter>();
+            commandRouter.CommandCreated += HandleCommandCreated;
+
+            Arguments arguments = new(args);
+            await commandRouter.Execute(arguments);
+        }
+
+        private static void HandleCommandCreated(object sender, CommandCreatedEventArgs e)
+        {
+            if (e.UnusedArguments.Count > 0)
+            {
+                foreach (Argument unusedArgument in e.UnusedArguments)
+                {
+                    string argumentInfo = unusedArgument.Name ?? unusedArgument.Value;
+                    CustomConsole.WriteLine(ConsoleColor.DarkYellow, $"Unknown argument: {argumentInfo}");
+                }
+            }
         }
     }
 }

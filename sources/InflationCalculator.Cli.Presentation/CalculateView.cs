@@ -15,16 +15,15 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
+using DustInTheWind.ConsoleTools.Commando;
 
 namespace DustInTheWind.InflationCalculator.Cli.Presentation
 {
-    public class CalculateView
+    public class CalculateView : IView<CalculateCommand>
     {
-        public float OutputValue { get; set; }
-
-        public void Display()
+        public void Display(CalculateCommand command)
         {
-            Console.WriteLine(OutputValue);
+            Console.WriteLine(command.OutputValue);
         }
     }
 }

@@ -16,36 +16,45 @@
 
 using System;
 using System.Threading.Tasks;
+using DustInTheWind.ConsoleTools.Commando;
 using DustInTheWind.InflationCalculator.Cli.Application.Calculate;
 using MediatR;
 
 namespace DustInTheWind.InflationCalculator.Cli.Presentation
 {
-    public class CalculateCommand
+    [Command("calculate", ShortDescription = "Calculate the inflated value.")]
+    public class CalculateCommand : ICommand
     {
         private readonly IMediator mediator;
-        private readonly CalculateView view;
 
-        public CalculateCommand(IMediator mediator, CalculateView view)
+        [CommandParameter(Name = "input-time", ShortName = 'i')]
+        public string InputTime { get; set; }
+
+        [CommandParameter(Name = "output-time", ShortName = 'o')]
+        public string OutputTime { get; set; }
+
+        [CommandParameter(Name = "value", ShortName = 'v')]
+        public float InputValue { get; set; }
+
+        public float OutputValue { get; private set; }
+
+        public CalculateCommand(IMediator mediator)
         {
             this.mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
-            this.view = view ?? throw new ArgumentNullException(nameof(view));
         }
 
         public async Task Execute()
         {
-
             CalculateRequest request = new()
             {
-                InputTime = "2020",
-                InputValue = 100,
-                OutputTime = "2021"
+                InputTime = InputTime,
+                InputValue = InputValue,
+                OutputTime = OutputTime
             };
 
             CalculateResponse response = await mediator.Send(request);
 
-            view.OutputValue = response.OutputValue;
-            view.Display();
+            OutputValue = response.OutputValue;
         }
     }
 }
