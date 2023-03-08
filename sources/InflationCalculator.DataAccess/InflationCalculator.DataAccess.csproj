@@ -35,6 +35,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
         <ProjectReference Include="..\InflationCalculator.Domain\InflationCalculator.Domain.csproj" />
     </ItemGroup>
 

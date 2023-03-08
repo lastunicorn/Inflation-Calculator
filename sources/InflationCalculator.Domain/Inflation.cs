@@ -20,6 +20,6 @@ namespace DustInTheWind.InflationCalculator.Domain
     {
         public string Time { get; set; }
 
-        public float Value { get; set; }
+        public float InflationRate { get; set; }
     }
 }

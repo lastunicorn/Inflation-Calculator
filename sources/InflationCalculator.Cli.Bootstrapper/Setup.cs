@@ -38,17 +38,20 @@ namespace DustInTheWind.InflationCalculator.Cli.Bootstrapper
             containerBuilder.RegisterType<YearlyDataContext>().As<DataContext>().SingleInstance();
             containerBuilder.RegisterType<InflationRepository>().As<IInflationRepository>();
 
-            containerBuilder.Register(container =>
-            {
-                IInflationRepository inflationRepository = container.Resolve<IInflationRepository>();
-
-                List<Inflation> inflations = inflationRepository.GetAll().ToList();
-
-                return new Calculator
+            containerBuilder
+                .Register(context =>
                 {
-                    Inflations = inflations
-                };
-            }).AsSelf();
+                    IInflationRepository inflationRepository = context.Resolve<IInflationRepository>();
+
+                    List<Inflation> inflations = inflationRepository.GetAll()
+                        .ToList();
+
+                    return new Calculator
+                    {
+                        Inflations = inflations
+                    };
+                })
+                .AsSelf();
 
             Assembly applicationAssembly = typeof(CalculateRequest).Assembly;
             containerBuilder.RegisterMediatR(applicationAssembly);

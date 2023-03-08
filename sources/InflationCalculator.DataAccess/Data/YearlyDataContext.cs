@@ -21,6 +21,7 @@ using System.Linq;
 using System.Reflection;
 using DustInTheWind.InflationCalculator.DataAccess.CsvModel;
 using DustInTheWind.InflationCalculator.Domain;
+using Newtonsoft.Json;
 
 namespace DustInTheWind.InflationCalculator.DataAccess.Data
 {
@@ -28,14 +29,18 @@ namespace DustInTheWind.InflationCalculator.DataAccess.Data
     {
         protected override List<Inflation> ReadInflationsFromFile()
         {
-            return ReadAllLines()
+            List<Inflation> readInflationsFromFile = ReadAllLines()
                 .Skip(1)
                 .Select(x => new Inflation
                 {
                     Time = x[0],
-                    Value = float.Parse(x[2], new CultureInfo("ro-RO"))
+                    InflationRate = float.Parse(x[2], new CultureInfo("ro-RO"))
                 })
                 .ToList();
+
+            string json = JsonConvert.SerializeObject(readInflationsFromFile, Formatting.Indented);
+
+            return readInflationsFromFile;
         }
 
         private static IEnumerable<CsvRow> ReadAllLines()

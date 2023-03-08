@@ -15,6 +15,8 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Autofac;
 using DustInTheWind.ConsoleTools;
@@ -32,9 +34,9 @@ namespace DustInTheWind.InflationCalculator.Cli.Bootstrapper
             await ProcessRequest(args, lifetimeScope);
         }
 
-        private static async Task ProcessRequest(string[] args, IComponentContext container)
+        private static async Task ProcessRequest(string[] args, IComponentContext context)
         {
-            CommandRouter commandRouter = container.Resolve<CommandRouter>();
+            CommandRouter commandRouter = context.Resolve<CommandRouter>();
             commandRouter.CommandCreated += HandleCommandCreated;
 
             Arguments arguments = new(args);
@@ -45,11 +47,12 @@ namespace DustInTheWind.InflationCalculator.Cli.Bootstrapper
         {
             if (e.UnusedArguments.Count > 0)
             {
-                foreach (Argument unusedArgument in e.UnusedArguments)
-                {
-                    string argumentInfo = unusedArgument.Name ?? unusedArgument.Value;
-                    CustomConsole.WriteLine(ConsoleColor.DarkYellow, $"Unknown argument: {argumentInfo}");
-                }
+
+                IEnumerable<string> unusedArguments = e.UnusedArguments
+                    .Select(x => x.Name ?? x.Value);
+
+                foreach (string unusedArgument in unusedArguments)
+                    CustomConsole.WriteLine(ConsoleColor.DarkYellow, $"Unknown argument: {unusedArgument}");
             }
         }
     }

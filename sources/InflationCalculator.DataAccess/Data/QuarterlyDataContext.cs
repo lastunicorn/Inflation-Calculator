@@ -32,7 +32,7 @@ namespace DustInTheWind.InflationCalculator.DataAccess.Data
                 .Select(x => new Inflation
                 {
                     Time = x[0],
-                    Value = float.Parse(x[3], CultureInfo.InvariantCulture)
+                    InflationRate = float.Parse(x[3], CultureInfo.InvariantCulture)
                 })
                 .ToList();
         }

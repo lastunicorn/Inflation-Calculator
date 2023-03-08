@@ -99,7 +99,7 @@ namespace DustInTheWind.InflationCalculator.Domain
 
             for (int i = inputIndex + 1; i <= outputIndex; i++)
             {
-                float inflationPercentage = inflations[i].Value;
+                float inflationPercentage = inflations[i].InflationRate;
                 float inflationValue = 1 + inflationPercentage / 100;
                 value *= inflationValue;
             }
@@ -113,7 +113,7 @@ namespace DustInTheWind.InflationCalculator.Domain
 
             for (int i = inputIndex; i > outputIndex; i--)
             {
-                float inflationPercentage = inflations[i].Value;
+                float inflationPercentage = inflations[i].InflationRate;
                 float inflationValue = 1 + inflationPercentage / 100;
                 value /= inflationValue;
             }
