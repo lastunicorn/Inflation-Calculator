@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         <RootNamespace>DustInTheWind.InflationCalculator.WebService.Bootstrapper</RootNamespace>
         <AssemblyName>DustInTheWind.InflationCalculator.WebService.Bootstrapper</AssemblyName>
     </PropertyGroup>
